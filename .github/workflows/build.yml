@@ -1,0 +1,69 @@
+name: CI
+
+on:
+  schedule:
+    - cron:
+        "0 * * * *" # build at 00:00 UTC every day
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - '**/.md'
+  pull_request:
+    branches:
+      - main
+    paths-ignore:
+      - "**.md"
+
+jobs:
+  build:
+    name: Build OCI image
+    runs-on: ubuntu-24.04
+
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Log in to ghcr.io
+        uses: redhat-actions/podman-login@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: OCI metadata
+        id: metadata
+        uses: docker/metadata-action@v5
+        with:
+          images: ghcr.io/${{ github.repository }}
+          tags: |
+            type=raw,value=latest,enable=${{ github.event_name == 'schedule' }}
+            type=raw,value={{date 'YYYYMMDD'}},enable=${{ github.event_name == 'schedule' }}
+            type=edge,branch=main
+            type=ref,event=branch,enable=${{ github.event_name != 'pull_request' }}
+            type=ref,event=pr
+            type=sha
+
+      - name: Build image
+        id: build
+        uses: redhat-actions/buildah-build@v2
+        with:
+          tags: ${{ steps.metadata.outputs.tags }}
+          labels: ${{ steps.metadata.outputs.labels }}
+          containerfiles: |
+            ./Containerfile
+          extra-args: |
+            --pull --squash
+
+      - name: Push to ghcr.io
+        uses: redhat-actions/push-to-registry@v2
+        with:
+          image: ${{ steps.build.outputs.image }}
+          tags: ${{ steps.build.outputs.tags }}
+          registry: ghcr.io
+          extra-args: |
+            --disable-content-trust
