@@ -3,7 +3,7 @@ name: CI
 on:
   schedule:
     - cron:
-        "0 * * * *" # build at 00:00 UTC every day
+        "0 17 * * 5" # build at 00:00 UTC+7 every saturday
   push:
     branches:
       - main
@@ -42,7 +42,7 @@ jobs:
           images: ghcr.io/${{ github.repository }}
           tags: |
             type=raw,value=latest,enable=${{ github.event_name == 'schedule' }}
-            type=raw,value={{date 'YYYYMMDD'}},enable=${{ github.event_name == 'schedule' }}
+            type=schedule,pattern={{date 'YYYYMMDD'}}
             type=edge,branch=main
             type=ref,event=branch,enable=${{ github.event_name != 'pull_request' }}
             type=ref,event=pr
