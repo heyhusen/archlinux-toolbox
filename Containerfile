@@ -10,4 +10,6 @@ RUN pacman -Syu --noconfirm \
 			gitui \
 			zed \
 			vulkan-radeon \
+			noto-fonts \
+			ttf-jetbrains-mono-nerd \
     && pacman -Scc --noconfirm
