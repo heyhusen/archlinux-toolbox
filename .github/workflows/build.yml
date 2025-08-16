@@ -41,7 +41,7 @@ jobs:
         with:
           images: ghcr.io/${{ github.repository }}
           tags: |
-            type=raw,value=latest,enable=${{ github.event_name == 'schedule' }}
+            type=raw,value=latest,enable=${{ github.event_name != 'pull_request' }}
             type=schedule,pattern={{date 'YYYYMMDD'}}
             type=edge,branch=main
             type=ref,event=branch,enable=${{ github.event_name != 'pull_request' }}
