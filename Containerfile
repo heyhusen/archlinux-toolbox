@@ -7,4 +7,5 @@ RUN pacman -S --noconfirm \
       helix \
 			fastfetch \
 			fzf \
+			gitui \
     && pacman -Scc --noconfirm
