@@ -1,6 +1,6 @@
 FROM quay.io/toolbx/arch-toolbox:latest
 
-RUN pacman -S --noconfirm \
+RUN pacman -Syu --noconfirm \
       fish \
       starship \
       zoxide \
@@ -8,4 +8,5 @@ RUN pacman -S --noconfirm \
 			fastfetch \
 			fzf \
 			gitui \
+			zed \
     && pacman -Scc --noconfirm
