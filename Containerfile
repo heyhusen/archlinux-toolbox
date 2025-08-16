@@ -9,4 +9,5 @@ RUN pacman -Syu --noconfirm \
 			fzf \
 			gitui \
 			zed \
+			vulkan-radeon \
     && pacman -Scc --noconfirm
