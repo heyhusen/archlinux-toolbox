@@ -2,6 +2,8 @@
 
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/heyhusen/archlinux-toolbox/build.yml?style=flat-square&label=CI)
 
+![Screenshot](./screenshot.png)
+
 This repository houses a **customized container image for
 [toolbox](https://github.com/containers/toolbox)**, built atop **Arch Linux**.
 It used as my **default image** for my toolbox-centric workflow, perfectly
