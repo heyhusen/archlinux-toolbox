@@ -8,8 +8,6 @@ RUN pacman -Syu --noconfirm \
 	fastfetch \
 	fzf \
 	gitui \
-	zed \
-	vulkan-radeon \
 	noto-fonts \
 	ttf-jetbrains-mono-nerd \
 	yaml-language-server \

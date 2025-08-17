@@ -30,7 +30,7 @@ Comes preloaded with tools required for my
 [dotfiles](https://github.com/heyhusen/dotfiles):
 
 - Shell: Fish
-- Editors: Helix & Zed
+- Editors: Helix
 - Git client: gitui
 - Fonts: Noto Sans & JetBrains Mono Nerd Font
 
