@@ -11,4 +11,5 @@ RUN pacman -Syu --noconfirm \
 	noto-fonts \
 	ttf-jetbrains-mono-nerd \
 	yaml-language-server \
+	taplo-cli \
 	&& pacman -Scc --noconfirm
