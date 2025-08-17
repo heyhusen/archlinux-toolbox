@@ -12,4 +12,5 @@ RUN pacman -Syu --noconfirm \
 	vulkan-radeon \
 	noto-fonts \
 	ttf-jetbrains-mono-nerd \
+	yaml-language-server \
 	&& pacman -Scc --noconfirm
