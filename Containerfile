@@ -9,7 +9,8 @@ RUN git clone https://aur.archlinux.org/paru-bin.git
 RUN cd paru-bin && makepkg -si --noconfirm
 
 RUN paru -Syu --noconfirm \
-	sql-language-server
+	sql-language-server \
+	jsonnet-language-server-bin
 
 USER root
 
