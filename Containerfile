@@ -10,7 +10,9 @@ RUN cd paru-bin && makepkg -si --noconfirm
 
 RUN paru -Syu --noconfirm \
 	sql-language-server \
-	jsonnet-language-server-bin
+	jsonnet-language-server-bin \
+	dockerfile-language-server \
+	nodejs-compose-language-service
 
 USER root
 
