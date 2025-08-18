@@ -1,5 +1,18 @@
 FROM quay.io/toolbx/arch-toolbox:latest
 
+RUN useradd -m builder && \
+    echo 'builder ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
+WORKDIR /home/builder
+USER builder
+
+RUN git clone https://aur.archlinux.org/paru-bin.git
+RUN cd paru-bin && makepkg -si --noconfirm
+
+RUN paru -Syu --noconfirm \
+	sql-language-server
+
+USER root
+
 RUN pacman -Syu --noconfirm \
 	fish \
 	starship \
@@ -21,5 +34,8 @@ RUN pacman -Syu --noconfirm \
 	svelte-language-server \
 	tailwindcss-language-server \
 	typescript-language-server \
-	vue-language-server \
-	&& pacman -Scc --noconfirm
+	vue-language-server
+
+RUN pacman -Scc --noconfirm
+
+RUN rm -rf /home/*
