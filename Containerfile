@@ -19,4 +19,5 @@ RUN pacman -Syu --noconfirm \
 	marksman \
 	rust-analyzer \
 	svelte-language-server \
+	tailwindcss-language-server \
 	&& pacman -Scc --noconfirm
