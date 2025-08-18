@@ -16,4 +16,5 @@ RUN pacman -Syu --noconfirm \
 	vscode-css-languageserver \
 	gopls \
 	vscode-json-languageserver \
+	marksman \
 	&& pacman -Scc --noconfirm
