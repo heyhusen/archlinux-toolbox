@@ -20,4 +20,5 @@ RUN pacman -Syu --noconfirm \
 	rust-analyzer \
 	svelte-language-server \
 	tailwindcss-language-server \
+	typescript-language-server \
 	&& pacman -Scc --noconfirm
