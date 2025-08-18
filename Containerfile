@@ -17,4 +17,5 @@ RUN pacman -Syu --noconfirm \
 	gopls \
 	vscode-json-languageserver \
 	marksman \
+	rust-analyzer \
 	&& pacman -Scc --noconfirm
