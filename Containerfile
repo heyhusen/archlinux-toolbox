@@ -14,4 +14,5 @@ RUN pacman -Syu --noconfirm \
 	taplo-cli \
 	bash-language-server \
 	vscode-css-languageserver \
+	gopls \
 	&& pacman -Scc --noconfirm
