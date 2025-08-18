@@ -18,4 +18,5 @@ RUN pacman -Syu --noconfirm \
 	vscode-json-languageserver \
 	marksman \
 	rust-analyzer \
+	svelte-language-server \
 	&& pacman -Scc --noconfirm
