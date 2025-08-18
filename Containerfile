@@ -35,7 +35,8 @@ RUN pacman -Syu --noconfirm \
 	svelte-language-server \
 	tailwindcss-language-server \
 	typescript-language-server \
-	vue-language-server
+	vue-language-server \
+	vscode-html-languageserver
 
 RUN pacman -Scc --noconfirm
 
