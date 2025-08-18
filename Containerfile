@@ -12,7 +12,8 @@ RUN paru -Syu --noconfirm \
 	sql-language-server \
 	jsonnet-language-server-bin \
 	dockerfile-language-server \
-	nodejs-compose-language-service
+	nodejs-compose-language-service \
+	astrojs-language-server
 
 USER root
 
