@@ -12,4 +12,5 @@ RUN pacman -Syu --noconfirm \
 	ttf-jetbrains-mono-nerd \
 	yaml-language-server \
 	taplo-cli \
+	bash-language-server \
 	&& pacman -Scc --noconfirm
