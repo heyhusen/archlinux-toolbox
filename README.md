@@ -30,8 +30,6 @@ Comes preloaded with tools required for my
 [dotfiles](https://github.com/heyhusen/dotfiles):
 
 - Shell: Fish
-- Editors: Helix
-- Git client: gitui
 - Fonts: Noto Sans & JetBrains Mono Nerd Font
 
 I also use this image to create a per-project toolbox image:
