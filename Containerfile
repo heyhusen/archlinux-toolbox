@@ -9,4 +9,5 @@ RUN pacman -Syu --noconfirm \
 	noto-fonts \
 	ttf-jetbrains-mono-nerd \
 	ncspot \
+	mise \
 	&& pacman -Scc --noconfirm
